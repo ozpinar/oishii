@@ -1,0 +1,719 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 4em;
+    width: 100%;
+    position: fixed;
+    color: white;
+    z-index: 30;
+}
+
+
+nav{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 5% auto 1fr 1fr 1fr 5%;
+    grid-template-rows: 1fr;
+    align-items: center;
+    /* border-bottom: 4px solid rgb(255, 255, 255, 0.3); */
+    z-index: 30;
+    background-color: rgb(0,0,0, 0.1);
+    transition: 0.5s ease;
+    
+}
+nav .home{
+    text-decoration: none;
+    color: white;
+    grid-column: 2;
+    font-size: 2em;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 3px 3px black;
+    align-self: right;
+   
+}
+
+nav i{
+    font-size: .8em;
+}
+
+
+nav h1::before{
+    content: '';
+    position: absolute;
+    left: -6em;
+    top:1.1em;
+    height: 5px;
+    width: 100%;
+    background-color: white;
+    animation: slidereverse .5s;
+}
+
+nav h1:hover::before{
+    left: 0em;
+    animation: slide .5s ;
+}
+@keyframes slide{
+    0%{
+        opacity: 0;
+        left: -6em;
+    }
+    100%{
+        opacity: 100;
+        left: 0em;
+    }
+}
+@keyframes slidereverse{
+    0%{
+        opacity: 100;
+        left: 0em;
+    }
+    100%{
+        opacity: 0;
+        left: 6em;
+    }
+}
+
+nav ul{
+    grid-column: 5;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+nav ul li{
+    overflow: hidden;
+}
+
+nav ul li a{
+    position: relative;
+    text-decoration: none;
+    color: white;;  
+    text-shadow: 0.5px 0.5px black;
+}
+
+nav ul li a::before{
+    content: '' ;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    top: 1.1em;
+    background-color: aliceblue;
+    left: -6em;
+    animation: slidereverse .3s;
+}
+
+nav ul li a:hover::before{
+    left: 0em;
+    animation: slide .3s;
+}
+
+.nav-scrolled{
+    transition: 0.5s ease;
+    background-color: rgb(0,0,0, 0.7);
+    
+}
+
+
+main{
+    position: relative;
+    min-height: 700px;
+    height: 100vh;
+    background-image: url(img/chef-preparing-vegetable-dish-on-tree-slab-1267320.jpg);
+    background-position: center;
+    opacity: .9;
+    background-attachment: fixed;
+
+
+}
+.text{
+    position: absolute;
+    top:50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    z-index: 10;
+}
+
+main h1{
+  
+    color: white;
+    padding-bottom: 3%;
+    width: 100%;
+    text-shadow: 2px 2px black;
+    font-size: 5em;
+    z-index: 15;
+    animation: letter 1s both;
+  
+}
+
+@keyframes letter{
+    0%{
+        opacity: 0;
+        margin-top: 5%;
+    }
+    
+    50%{
+        opacity: .7;
+        margin-top: 25%;
+    }
+    
+    100%{
+        opacity: 1;
+        margin-top:0%;
+    }
+}
+
+
+main .offers{
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    z-index: 15;
+    animation: letter 1.5s;
+}
+
+main .icon{
+    position: absolute;
+    font-size: 3em;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    animation: jump 2s infinite;
+}
+
+@keyframes jump{
+    0%{
+        top:90%
+    }
+    50%{
+        top:91%;
+    }
+    100%{
+        top: 90%;
+    }
+}
+
+.description{
+    margin-top: 1px;
+    position: relative;
+    min-height: 400px;
+    height: 50vh;  
+    
+}
+.description h2{
+    margin-bottom: 5%;
+    font-size: 3em;
+}
+.description p{
+    line-height: 1.5em;
+    color:#363531;
+}
+
+.description div{ 
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.eattogether{
+    position: relative;
+    min-height: 800px;
+    height: 100vh;
+    background-image: url(img/table-in-vintage-restaurant-6267.jpg);
+    background-position: center;
+    background-attachment: fixed;
+
+}
+
+.eattogether::after, main::after, .titleimage::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.6;
+}
+
+.eattogether div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.eattogether div h2{
+    font-size: 6em;
+    margin-bottom: 5%;
+}
+
+.eattogether div p {
+    padding: 5% 0;
+    margin-bottom: 10%;
+    font-size: 2em;
+}
+
+.eattogether div a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 3%;
+    margin-top: 50px;
+    transition: .4s ease;
+    font-weight: 600;
+}
+
+.eattogether div a:hover{
+    background-color: white;
+    color: black;
+}
+
+.menus{
+    position: relative;
+    min-height: 800px;
+    height: 100vh;
+
+
+}
+
+.containermenus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+  
+}
+
+.photos{
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 5%;
+    
+}
+
+.photos div{
+    text-align: center;
+    height: 30%;
+    width: 30%;
+}
+
+.photos div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.paragraphs{
+    text-align: left;
+    display: grid;
+    grid-gap: 5%;
+    grid-template-columns: repeat(2, 1fr);
+    position: relative;
+    max-height: 50%;
+    margin-bottom: 5em;
+
+    
+}
+
+.par1, .par2{
+    line-height: 1.5em;
+    
+}
+
+.top{
+    margin-bottom: 5%;
+}
+
+.viewmenus{
+    text-align: center;
+    min-height: 20%;
+}
+
+.menus a{
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 1em;
+    transition: .4s ease;
+    font-weight: 600;
+    text-align: center;
+ 
+}
+
+.menus a:hover{
+    background-color: black;
+    color: white;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.titleimage{
+    position: relative;
+    min-height: 800px;
+    height: 100vh;
+    background-image: url(img/menu-restaurant-france-eating-9315.jpg);
+    background-position: cover;
+    background-attachment: fixed;
+    overflow: auto;
+}
+
+.titlemenu{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    text-align: center;
+    z-index: 15;
+}
+
+.titlemenu h1{
+    font-size: 5em;
+    padding: 5%;
+    margin-top: -5%;
+}
+
+.titlemenu p {
+    font-size: 2em;
+}
+
+.appetizers{
+    min-height: 400px;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 1fr 10%;
+    grid-template-rows: 3em 5em 5em;
+    grid-column-gap: 5%;
+    grid-row-gap: 5em;
+    text-align: center;
+    align-content: center;
+}
+
+
+
+.appetizers h2{
+    grid-column: 2/5;
+    grid-row: 1;
+    align-self: center;
+  
+}
+.item{
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-rows: 1em minmax(1em, 1fr);
+    grid-row-gap: 1em;
+    text-align: left;
+  
+}
+
+
+
+.item h5{
+    font-size: 1em;
+    color: gray;
+}
+
+.item .desc{
+    grid-column: 1/2;
+    grid-row: 2;
+}
+
+.item .money{
+    justify-self: right;
+}
+
+.item1{
+    grid-column: 2/3;
+    grid-row: 2;
+    
+}
+
+.item2{
+    grid-column: 3/4;
+    grid-row: 2;
+    
+}
+
+.item3{
+    grid-column: 4/5;
+    grid-row: 2;
+}
+
+.item4{
+    grid-column: 2/3;
+    grid-row: 3;
+}
+
+.item5{
+    grid-column: 3/4;
+    grid-row: 3;
+}
+
+.item6{
+    grid-column: 4/5;
+    grid-row: 3;
+}
+
+.entrees{
+    min-height:900px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 10% repeat(auto-fit, minmax(5em, 1fr)) 10%;
+    grid-template-rows: 1em repeat(auto-fit, minmax(5em, 1fr));
+    grid-column-gap: 5%;
+    grid-row-gap: 5em;
+    text-align: center;
+
+
+
+
+}
+.entrees h2{
+    grid-column: 2/5;
+   
+}
+
+.entree1{
+    grid-column: 2/3;
+    grid-row: 2;
+    
+}
+
+.entree2{
+    grid-column: 3/4;
+    grid-row: 2;
+    
+}
+
+.entree3{
+    grid-column: 4/5;
+    grid-row: 2;
+}
+
+.entree4{
+    grid-column: 2/3;
+    grid-row: 3;
+}
+
+.entree5{
+    grid-column: 3/4;
+    grid-row: 3;
+}
+
+.entree6{
+    grid-column: 4/5;
+    grid-row: 3;
+}
+
+.entree7{
+    grid-column: 2/3;
+    grid-row-gap: 4;
+}
+
+.entree8{
+    grid-column: 3/4;
+    grid-row-gap: 4;
+}
+
+.entree9{
+    grid-column: 4/5;
+    grid-row-gap: 4;
+}
+
+
+.entree10{
+    grid-column: 2/3;
+    grid-row-gap: 5;
+}
+
+.entree11{
+    grid-column: 3/4;
+    grid-row-gap: 5;
+}
+
+.entree12{
+    grid-column: 4/5;
+    grid-row-gap: 5;
+}
+
+.entree13{
+    grid-column: 2/3;
+    grid-row-gap: 6;
+}
+
+.entree14{
+    grid-column: 3/4;
+    grid-row-gap: 6;
+}
+
+.entree15{
+    grid-column: 4/5;
+    grid-row-gap: 6;
+}
+
+.desserts{
+    min-height: 400px;
+    height: 50vh;
+    display: grid;
+    grid-template-columns: 10% 1fr 1fr 1fr 10%;
+    grid-template-rows: 3em 5em 5em;
+    grid-column-gap: 5%;
+    grid-row-gap: 5em;
+    text-align: center;
+    align-content: center;
+
+
+}
+.desserts h2{
+    grid-row: 1;
+    grid-column: 2/5;
+    align-self: center;
+}
+
+.dessert1{
+    grid-column: 2/3;
+    grid-row: 2;
+    
+}
+
+.dessert2{
+    grid-column: 3/4;
+    grid-row: 2;
+    
+}
+
+.dessert3{
+    grid-column: 4/5;
+    grid-row: 2;
+}
+
+.dessert4{
+    grid-column: 2/3;
+    grid-row: 3;
+}
+
+.dessert5{
+    grid-column: 3/4;
+    grid-row: 3;
+}
+
+.dessert6{
+    grid-column: 4/5;
+    grid-row: 3;
+}
+
+footer {
+    padding: 0 20em;
+    background-color: #3c342f;
+    height: 30vh;
+    min-height: 300px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+.icons{
+    grid-column: 1/-1;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+.icons a{
+    margin: 0 2em;
+    display: inline-block;
+    line-height: 3em;
+    text-align: center;
+    text-decoration: none;
+    color: #3c342f;
+    height: 3em;
+    width: 3em;
+    background-color: white;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+#fb:hover{
+    color: white;
+    background-color: #3b5998;
+}
+
+#ig:hover{
+    color: white;
+    background-color: #e95950;
+}
+
+#tw:hover{
+    color: white;
+    background-color: #00acee;
+}
+#yt:hover{
+    color:white;
+    background-color:  #c4302b;
+}
+
+.locations{
+    grid-column: 1/2;
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 2em;
+
+    color: white;
+}
+.locations h3{
+    font-size: 1.5em;
+}
+
+#loc1, #loc2, #loc3{
+    grid-row: 2;
+}
+
+.hours{
+    justify-self: center;
+    grid-column: 2/3;
+    grid-row: 2;
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    grid-row-gap: 2em;
+    color: white;
+}
+.hours h3{
+    font-size: 1.5em;
+    grid-row: 1;
+}
+
+#hourss{
+   grid-row: 2;
+}
+
+#rights{
+    grid-row: 3;
+    color: white;
+    font-size: .5em;
+    align-self: center;
+    margin-bottom: -6em;
+}
